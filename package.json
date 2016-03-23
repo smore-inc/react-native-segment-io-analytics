@@ -2,7 +2,6 @@
   "name": "react-native-segment-io-analytics",
   "version": "0.0.6",
   "description": "React Native wrapper for the Segment.com Analytics SDK",
-  "main": "RNSegmentIOAnalytics.ios.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:smore-inc/react-native-segment-io-analytics.git"
