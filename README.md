@@ -17,8 +17,8 @@ The iOS SDK can be found here: https://github.com/segmentio/analytics-ios
 var RNSegmentIOAnalytics = require('react-native-segment-io-analytics');
 
 var segmentIOWriteKey = "SEGMENT_IO_WRITE_KEY"
-var flushEverySecondsCount = 1
-RNSegmentIOAnalytics.setup(segmentIOWriteKey, flushEverySecondsCount);
+var eventQueueSize = 1
+RNSegmentIOAnalytics.setup(segmentIOWriteKey, eventQueueSize);
 RNSegmentIOAnalytics.identifyUser("testing", {"name":"test name"});
 RNSegmentIOAnalytics.track("test track", {"name":"test track with name"});
 RNSegmentIOAnalytics.screen("test screen", {"screenType":"SCREEN NAME"});
