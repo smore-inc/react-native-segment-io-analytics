@@ -1,16 +1,34 @@
 # RNSegmentIOAnalytics
 
+
+## This fork has been improved upon and superseded by [smore-inc/react-native-segment-io-analytics#26](https://github.com/smore-inc/react-native-segment-io-analytics/pull/26)
 Written by Tal Kain <tal@kain.net>
 
-Based on SegmentIO (https://segment.com) Analytics project. 
-The iOS SDK can be found here: https://github.com/segmentio/analytics-ios
+Based on SegmentIO (https://segment.com) Analytics project. See [iOS SDK](https://github.com/segmentio/analytics-ios) and [Android SDK](https://github.com/segmentio/analytics-android).
 
-## Installation
+
+## iOS Installation
 1. Download and install the npm package by running `npm install --save react-native-segment-io-analytics`
 2. In your Podfile, add `pod "Analytics"` to your project.
-3. Inside Xcode (make sure you've opened your `.xcworkspace` file), go to the project navigator and right click `Libraries` -> `Add Files to [your project's name]`.
-4. Go to `node_modules` -> `react-native-segment-io-analytics` -> and choose the `RNSegmentIOAnalytics.xcodeproj` file.
+3. Inside Xcode, go to the project navigator and right click `Libraries` -> `Add Files to [your project's name]`
+4. Go to `node_modules` -> `react-native-segment-io-analytics` -> and choose the `RNSegmentIOAnalytics.xcodeproj` file 
 5. Make sure your project links to *libAnalytics.a* and *libRNSegmentIOAnalytics.a* (The libraries should be listed under "Build Phases -> Link Binary With Libraries").
+
+## Android Installation
+1. Download and install the npm package by running `npm install --save react-native-segment-io-analytics`
+2. If using [rnpm](https://github.com/rnpm/rnpm), run `rnpm link`. Otherwise add to `android/app/src/main/java/com/your-app-name/MainActivity.java`:
+
+```java
+import com.facebook.react.ReactPackage;
+import com.smore.RNSegmentIOAnalytics.RNSegmentIOAnalyticsPackage; // <-- add this
+...
+
+      return Arrays.<ReactPackage>asList( 
+        new MainReactPackage(),
+        new RNSegmentIOAnalyticsPackage(), // <-- add this
+        ...
+      );
+```
 
 ## Usage sample
 ```javascript
@@ -28,6 +46,7 @@ RNSegmentIOAnalytics.reset();
 
 ## Documentation
 https://segment.com/docs/libraries/ios/#getting-started
+https://segment.com/docs/libraries/android/#getting-started
 
 ## Handling possible issues
 ### Google SDK BitCode issue
