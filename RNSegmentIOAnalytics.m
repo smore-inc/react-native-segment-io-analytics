@@ -27,7 +27,7 @@ RCT_EXPORT_METHOD(setup:(NSString*)configKey :(NSUInteger)flushAt :(BOOL)shouldU
  https://segment.com/docs/libraries/ios/#identify
  */
 RCT_EXPORT_METHOD(identifyUser:(NSString*)userId traits:(NSDictionary *)traits) {
-    [[SEGAnalytics sharedAnalytics] identify:userId traits:[self convertToStringDictionary:traits]];
+    [[SEGAnalytics sharedAnalytics] identify:userId traits:traits];
 }
 
 /*
@@ -42,13 +42,13 @@ RCT_EXPORT_METHOD(alias:(NSString *)newId) {
  */
 RCT_EXPORT_METHOD(track:(NSString*)trackText properties:(NSDictionary *)properties) {
     [[SEGAnalytics sharedAnalytics] track:trackText
-                               properties:[self convertToStringDictionary:properties]];
+                               properties:properties];
 }
 /*
  https://segment.com/docs/libraries/ios/#screen
  */
 RCT_EXPORT_METHOD(screen:(NSString*)screenName properties:(NSDictionary *)properties) {
-    [[SEGAnalytics sharedAnalytics] screen:screenName properties:[self convertToStringDictionary:properties]];
+    [[SEGAnalytics sharedAnalytics] screen:screenName properties:properties];
 }
 
 /*
@@ -84,20 +84,6 @@ RCT_EXPORT_METHOD(disable) {
  */
 RCT_EXPORT_METHOD(enable) {
     [[SEGAnalytics sharedAnalytics] enable];
-}
-
--(NSMutableDictionary*) convertToStringDictionary: (NSDictionary *)properties {
-    /*
-     According to React Native's documentation:
-     
-     For maps, it is the developer's responsibility to check the value types individually by manually calling RCTConvert helper methods.
-     */
-    NSMutableDictionary *stringDictionary = [[NSMutableDictionary alloc] init];
-    for (NSString* key in [properties allKeys]) {
-        id value = [RCTConvert NSString:[properties objectForKey:key]];
-        [stringDictionary setObject:value forKey:[RCTConvert NSString:key]];
-    }
-    return stringDictionary;
 }
 
 @end
