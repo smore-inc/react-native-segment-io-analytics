@@ -87,6 +87,13 @@ var RNSegmentIOAnalytics = {
     enable: function () {
         NativeRNSegmentIOAnalytics.enable();
     },
+
+    /*
+     * https://segment.com/docs/spec/alias/
+     */
+    alias: function (newId) {
+        NativeRNSegmentIOAnalytics.alias(newId);
+    },
 };
 
 module.exports = RNSegmentIOAnalytics;

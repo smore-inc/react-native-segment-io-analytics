@@ -86,6 +86,13 @@ RCT_EXPORT_METHOD(enable) {
     [[SEGAnalytics sharedAnalytics] enable];
 }
 
+/*
+ https://segment.com/docs/spec/alias/
+ */
+RCT_EXPORT_METHOD(alias: (NSString*)newId) {
+    [[SEGAnalytics sharedAnalytics] alias:newId];
+}
+
 -(NSMutableDictionary*) convertToStringDictionary: (NSDictionary *)properties {
     /*
      According to React Native's documentation:
