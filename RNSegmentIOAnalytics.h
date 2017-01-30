@@ -5,7 +5,7 @@
 //  Copyright (c) 2015 Fire Place Inc. All rights reserved.
 //
 
-#import "RCTBridgeModule.h"
+#import <React/RCTBridgeModule.h>
 
 /*
  * React native wrapper of the Segment.com's Analytics iOS SDK
