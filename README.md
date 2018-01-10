@@ -1,6 +1,9 @@
+
 # RNSegmentIOAnalytics
 
 Written by Tal Kain <tal@kain.net>
+
+## This project is no longer actively maintained. For Android Support and newer features in the Segment native library, check out [this library](https://github.com/leoilab/react-native-analytics-segment-io).
 
 Based on SegmentIO (https://segment.com) Analytics project. 
 The iOS SDK can be found here: https://github.com/segmentio/analytics-ios
